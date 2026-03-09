@@ -1,52 +1,45 @@
 # TEMP-TREAT
-⚡ The "Dragui" Energy Blueprint
-Powering Up Europe: Mario Draghi’s Vision for a Sovereign & Green Future
+🌡️ TEMP-TREAT: Temperature & Child Maltreatment
+Replicating Evans, Gazze, & Schaller (2025): The Impact of Heat on Child Welfare
 
-Welcome to the mission control center for the Draghi Energy Analysis! This repository focuses on the heavy-duty energy strategy proposed in the landmark "Future of European Competitiveness" report by Mario Draghi (aka "Il Dragui").
+This repository contains the replication and analysis of the paper "Temperature and Maltreatment of Young Children" (published in Review of Economics and Statistics, 2025). The project explores how short-term weather variations, particularly extreme heat, influence alleged and substantiated cases of child maltreatment across the United States.
+🧐 The Research Question
 
-If you want to know how Europe plans to keep the lights on without breaking the bank or the planet, you're in the right place.
-🧐 The Big Picture
+Does extreme temperature affect the safety of young children? While poverty and substance abuse are known risk factors, this study investigates contemporaneous environmental shocks. We specifically analyze whether heat triggers aggression or leads to neglect through changes in parental time use and cognitive function.
+🛠️ The Analytical Framework
 
-Europe is at a crossroads. While the US and China are sprinting ahead, we’re paying 2–3x more for electricity and 4–5x more for gas. "Dragui" isn't just sounding the alarm; he’s handing us the toolkit to fix it.
+The project utilizes a high-dimensional fixed effects model to isolate the causal impact of temperature:
 
-This project dives into the core energy pillars of the 2024 report:
+    The Data: Combines the NCANDS (National Child Abuse and Neglect Data System) child welfare records with PRISM modeled daily weather data (2006–2016).
 
-    Decoupling the Bill: Breaking the link between expensive gas and cheap renewable energy to lower household bills.
+    The Methodology: Exploits within-county variation across years to control for local seasonality and state-level policy changes.
 
-    The Grid Revolution: Building massive cross-border interconnections to create a true "Energy Union".
+    The "Bins" Approach: Temperature is categorized into 5-degree Celsius bins (from ≤0∘C to >35∘C) to capture non-linear effects.
 
-    Clean Tech Dominance: From green hydrogen to "next-gen" nuclear, making Europe a leader in the tech it uses to decarbonize.
+📂 Repository Contents
 
-🛠️ The Strategic Toolkit
+    Evans_2025_REStat.pdf: The core research paper being replicated, focusing on children aged 0-4.
 
-Inside this repository, you’ll find the fuel for your research:
+    PRESENTATION_SIMATOVIC_HEDROUG.odp: The summary slide deck for the project, detailing the empirical strategy and findings.
 
-    The Draghi report (Part A).pdf: The "Bible" of European competitiveness. A deep dive into innovation, energy, and security.
+    analysis_scripts/: (Placeholder for your R scripts) Including data cleaning, fixed-effects regressions, and visualization of the temperature gradient.
 
-    Energy.odp: The high-level presentation deck. Perfect for summarizing the 800 billion euro investment plan Europe needs every year.
+    outputs/: Regression tables and figures illustrating the "Neglect vs. Physical Abuse" results.
 
-📂 The Battle Plan (Workflow)
+📈 Key Findings & Insights
 
-    Diagnostic: Understanding why energy is the "Achilles' heel" of European industry.
+    Heat & Neglect: An additional day of extreme heat (>35∘C) increases substantiated maltreatment by 0.5%. The effect is driven by neglect, not physical abuse.
 
-    Strategy: Mapping out the transition from fossil fuels to a tech-neutral, clean-energy mix.
+    Mechanisms: Time-use data shows a significant decrease in active childcare during hot days.
 
-    Investment: Analyzing how to unlock the €750–800 billion annual funding gap required to pull this off.
+    The AC Shield: There is evidence that high air conditioning penetration mitigates the adverse effects of heat on child welfare.
 
-📈 The "Dragui" Verdict
+    Climate Forecast: Projections suggest that climate change could increase annual child victimization by 1.53% by 2100.
 
-Europe has a choice: radical change or stagnation. To win, we need:
+🚀 How to Run the Analysis
 
-    Faster Permitting: Cutting the wait time for wind farms from 9 years to 3.
+    Clone the repo.
 
-    Common Assets: Issuing safe, common European debt to finance big energy projects.
+    Environment Setup: Ensure R packages fixest, tidyverse, and PRISM are installed.
 
-    Industrial Sovereignty: Reducing dependencies on raw materials from rivals.
-
-🚀 How to Explore
-
-    Read the Specs: Open the PDF to understand the policy nuances.
-
-    View the Slides: Open Energy.odp for the visual summary of the energy transition.
-
-    Join the Debate: Use these findings to model the future of the European industrial heartland.
+    Run Pipeline: Execute the main script to reproduce the Allegation and Victimization rate plots (replicating Figure 1 of the paper).
